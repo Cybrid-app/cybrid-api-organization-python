@@ -15,3 +15,4 @@
 
 # Import APIs into API package:
 from cybrid_api_organization.api.organizations_organization_api import OrganizationsOrganizationApi
+from cybrid_api_organization.api.subscriptions_organization_api import SubscriptionsOrganizationApi
