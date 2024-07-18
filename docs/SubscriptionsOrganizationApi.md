@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_subscription**
-> Subscription delete_subscription(subscription_guid)
+> delete_subscription(subscription_guid)
 
 Delete Subscription
 
@@ -119,7 +119,6 @@ Deletes a subscription.  Required scope: **subscriptions:execute**
 import time
 import cybrid_api_organization
 from cybrid_api_organization.api import subscriptions_organization_api
-from cybrid_api_organization.model.subscription import Subscription
 from cybrid_api_organization.model.error_response import ErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://organization.sandbox.cybrid.app
@@ -153,8 +152,7 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete Subscription
-        api_response = api_instance.delete_subscription(subscription_guid)
-        pprint(api_response)
+        api_instance.delete_subscription(subscription_guid)
     except cybrid_api_organization.ApiException as e:
         print("Exception when calling SubscriptionsOrganizationApi->delete_subscription: %s\n" % e)
 ```
@@ -168,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+void (empty response body)
 
 ### Authorization
 
@@ -184,7 +182,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Subscription deleted |  -  |
+**204** | Subscription deleted |  -  |
 **401** | Unauthorized - Authentication failed,  |  -  |
 **403** | Invalid scope |  -  |
 **404** | Subscription not found |  -  |

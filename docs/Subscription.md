@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name provided for the subscription. | 
 **url** | **str** | The url for the subscription. | 
 **environment** | **str** | The environment that the subscription is configured for; one of sandbox or production. | 
-**state** | **str** | The state of the subscription; one of storing, completed, failed, deleting, or deleted. | 
+**state** | **str** | The state of the subscription; one of storing, completed, or failed. | 
 **type** | **str** | The type of subscription. | defaults to "webhook"
 **failure_code** | **str, none_type** | The failure code of a subscription (if any) | [optional] 
 **created_at** | **datetime** | ISO8601 datetime the record was created at. | [optional] 
