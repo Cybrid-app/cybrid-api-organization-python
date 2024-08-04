@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **environment** | **str** | The environment that the subscription is configured for; one of sandbox or production. | 
 **state** | **str** | The state of the subscription; one of storing, completed, or failed. | 
 **type** | **str** | The type of subscription. | defaults to "webhook"
+**organization_guid** | **str** | The organization guid for the subscription. | [optional] 
+**signing_key** | **str** | Subscription private signing key. | [optional] 
+**deliveries_failing_since** | **datetime, none_type** | ISO8601 datetime the deliveries started failing. | [optional] 
 **failure_code** | **str, none_type** | The failure code of a subscription (if any) | [optional] 
 **created_at** | **datetime** | ISO8601 datetime the record was created at. | [optional] 
 **updated_at** | **datetime** | ISO8601 datetime the record was last updated at. | [optional] 
