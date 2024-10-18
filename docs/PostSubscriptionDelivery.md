@@ -1,5 +1,6 @@
 # PostSubscriptionDelivery
 
+Request body for subscription delivery creation.
 
 ## Properties
 Name | Type | Description | Notes

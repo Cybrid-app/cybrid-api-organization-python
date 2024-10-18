@@ -57,10 +57,10 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = subscriptions_organization_api.SubscriptionsOrganizationApi(api_client)
     post_subscription = PostSubscription(
-        name="name_example",
+        environment="sandbox",
         type="webhook",
+        name="name_example",
         url="url_example",
-        environment="environment_example",
     ) # PostSubscription | 
 
     # example passing only required values which don't have defaults set
