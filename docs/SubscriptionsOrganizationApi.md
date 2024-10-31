@@ -235,21 +235,11 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = subscriptions_organization_api.SubscriptionsOrganizationApi(api_client)
     subscription_guid = "subscription_guid_example" # str | Identifier for the subscription.
-    include_signing_key = True # bool | Flag to include signing key in the response. (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Get Subscription 
         api_response = api_instance.get_subscription(subscription_guid)
-        pprint(api_response)
-    except cybrid_api_organization.ApiException as e:
-        print("Exception when calling SubscriptionsOrganizationApi->get_subscription: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get Subscription 
-        api_response = api_instance.get_subscription(subscription_guid, include_signing_key=include_signing_key)
         pprint(api_response)
     except cybrid_api_organization.ApiException as e:
         print("Exception when calling SubscriptionsOrganizationApi->get_subscription: %s\n" % e)
@@ -261,7 +251,6 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_guid** | **str**| Identifier for the subscription. |
- **include_signing_key** | **bool**| Flag to include signing key in the response. | [optional]
 
 ### Return type
 
@@ -336,13 +325,14 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
     page = ListRequestPage(0) # int | The page index to retrieve. (optional)
     per_page = ListRequestPerPage(1) # int | The number of entities per page to return. (optional)
     guid = "guid_example" # str | Comma separated subscription_guids to list subscriptions for. (optional)
-    include_signing_key = True # bool | Flag to include signing key in the response. (optional)
+    environment = "environment_example" # str | Environment to list subscriptions for. (optional)
+    state = "state_example" # str | State to list subscriptions for. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get subscriptions list
-        api_response = api_instance.list_subscriptions(page=page, per_page=per_page, guid=guid, include_signing_key=include_signing_key)
+        api_response = api_instance.list_subscriptions(page=page, per_page=per_page, guid=guid, environment=environment, state=state)
         pprint(api_response)
     except cybrid_api_organization.ApiException as e:
         print("Exception when calling SubscriptionsOrganizationApi->list_subscriptions: %s\n" % e)
@@ -356,7 +346,8 @@ Name | Type | Description  | Notes
  **page** | **int**| The page index to retrieve. | [optional]
  **per_page** | **int**| The number of entities per page to return. | [optional]
  **guid** | **str**| Comma separated subscription_guids to list subscriptions for. | [optional]
- **include_signing_key** | **bool**| Flag to include signing key in the response. | [optional]
+ **environment** | **str**| Environment to list subscriptions for. | [optional]
+ **state** | **str**| State to list subscriptions for. | [optional]
 
 ### Return type
 
