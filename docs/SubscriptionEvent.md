@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **environment** | **str** | The environment that the subscription event is configured for; one of sandbox or production. | 
 **organization_guid** | **str** | The organization guid of the subscription event. | 
 **created_at** | **datetime** | ISO8601 datetime the record was created at. | 
+**bank_guid** | **str** | The bank guid for which the event is received. | [optional] 
 **updated_at** | **datetime** | ISO8601 datetime the record was last updated at. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
