@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guid** | **str** | Auto-generated unique identifier for the subscription. | 
 **name** | **str** | Name provided for the subscription. | 
-**url** | **str** | The url for the subscription. | 
+**type** | **str** | The type of subscription. | 
 **environment** | **str** | The environment that the subscription is configured for; one of sandbox or production. | 
 **state** | **str** | The state of the subscription; one of storing, completed, or failed. | 
-**type** | **str** | The type of subscription. | defaults to "webhook"
 **organization_guid** | **str** | The organization guid for the subscription. | [optional] 
-**signing_key** | **str** | Subscription private signing key. | [optional] 
+**url** | **str, none_type** | The url for the subscription. Required when subscription_type is webhook. | [optional] 
+**signing_key** | **str** | Subscription private signing key. Optional when subscription_type is webhook. | [optional] 
+**recipient** | **str, none_type** | Recipient email address. Required when subscription_type is email. | [optional] 
 **deliveries_failing_since** | **datetime, none_type** | ISO8601 datetime the deliveries started failing. | [optional] 
 **failure_code** | **str, none_type** | The failure code of a subscription (if any) | [optional] 
 **created_at** | **datetime** | ISO8601 datetime the record was created at. | [optional] 

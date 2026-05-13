@@ -61,6 +61,7 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
         type="webhook",
         name="name_example",
         url="url_example",
+        recipient="recipient_example",
     ) # PostSubscription | 
 
     # example passing only required values which don't have defaults set
@@ -98,7 +99,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Subscription created |  -  |
-**401** | Unauthorized - Authentication failed,  |  -  |
+**401** | Unauthorized - Authentication failed |  -  |
 **403** | Invalid scope |  -  |
 **422** | Unprocessable Content |  -  |
 
@@ -184,7 +185,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Subscription deleted |  -  |
-**401** | Unauthorized - Authentication failed,  |  -  |
+**401** | Unauthorized - Authentication failed |  -  |
 **403** | Invalid scope |  -  |
 **404** | Subscription not found |  -  |
 
@@ -272,7 +273,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Subscription found |  -  |
-**401** | Unauthorized - Authentication failed,  |  -  |
+**401** | Unauthorized - Authentication failed |  -  |
 **403** | Invalid scope |  -  |
 **404** | Subscription not found |  -  |
 
@@ -370,7 +371,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Get list of subscriptions |  -  |
 **400** | Invalid requests |  -  |
-**401** | Unauthorized - Authentication failed,  |  -  |
+**401** | Unauthorized - Authentication failed |  -  |
 **403** | Invalid scope |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
