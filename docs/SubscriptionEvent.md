@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **organization_guid** | **str** | The organization guid of the subscription event. | 
 **created_at** | **datetime** | ISO8601 datetime the record was created at. | 
 **bank_guid** | **str** | The bank guid for which the event is received. | [optional] 
-**context_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | Context data for email template rendering. | [optional] 
 **updated_at** | **datetime** | ISO8601 datetime the record was last updated at. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
