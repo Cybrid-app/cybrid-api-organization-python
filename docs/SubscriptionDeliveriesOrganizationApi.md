@@ -238,12 +238,16 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
     guid = "guid_example" # str | Comma separated subscription_delivery_guids to list subscription deliveries for. (optional)
     subscription_event_guid = "subscription_event_guid_example" # str | Comma separated subscription_event_guids to list subscription deliveries for. (optional)
     subscription_guid = "subscription_guid_example" # str | Comma separated subscription_guids to list subscription deliveries for. (optional)
+    state = "state_example" # str | Comma separated states to list subscription deliveries for. (optional)
+    event_type = "event_type_example" # str | Comma separated event types to list subscription deliveries for. (optional)
+    completed_at_gte = "completed_at_gte_example" # str | ISO8601 datetime; only deliveries completed at or after this time are returned. (optional)
+    completed_at_lt = "completed_at_lt_example" # str | ISO8601 datetime; only deliveries completed before this time are returned. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get subscription deliveries list
-        api_response = api_instance.list_subscription_deliveries(page=page, per_page=per_page, guid=guid, subscription_event_guid=subscription_event_guid, subscription_guid=subscription_guid)
+        api_response = api_instance.list_subscription_deliveries(page=page, per_page=per_page, guid=guid, subscription_event_guid=subscription_event_guid, subscription_guid=subscription_guid, state=state, event_type=event_type, completed_at_gte=completed_at_gte, completed_at_lt=completed_at_lt)
         pprint(api_response)
     except cybrid_api_organization.ApiException as e:
         print("Exception when calling SubscriptionDeliveriesOrganizationApi->list_subscription_deliveries: %s\n" % e)
@@ -259,6 +263,10 @@ Name | Type | Description  | Notes
  **guid** | **str**| Comma separated subscription_delivery_guids to list subscription deliveries for. | [optional]
  **subscription_event_guid** | **str**| Comma separated subscription_event_guids to list subscription deliveries for. | [optional]
  **subscription_guid** | **str**| Comma separated subscription_guids to list subscription deliveries for. | [optional]
+ **state** | **str**| Comma separated states to list subscription deliveries for. | [optional]
+ **event_type** | **str**| Comma separated event types to list subscription deliveries for. | [optional]
+ **completed_at_gte** | **str**| ISO8601 datetime; only deliveries completed at or after this time are returned. | [optional]
+ **completed_at_lt** | **str**| ISO8601 datetime; only deliveries completed before this time are returned. | [optional]
 
 ### Return type
 
