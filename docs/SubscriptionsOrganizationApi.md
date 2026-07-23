@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_subscription**](SubscriptionsOrganizationApi.md#delete_subscription) | **DELETE** /api/subscriptions/{subscription_guid} | Delete Subscription
 [**get_subscription**](SubscriptionsOrganizationApi.md#get_subscription) | **GET** /api/subscriptions/{subscription_guid} | Get Subscription 
 [**list_subscriptions**](SubscriptionsOrganizationApi.md#list_subscriptions) | **GET** /api/subscriptions | Get subscriptions list
+[**update_subscription**](SubscriptionsOrganizationApi.md#update_subscription) | **PATCH** /api/subscriptions/{subscription_guid} | Patch subscription
 
 
 # **create_subscription**
@@ -373,6 +374,100 @@ Name | Type | Description  | Notes
 **400** | Invalid requests |  -  |
 **401** | Unauthorized - Authentication failed |  -  |
 **403** | Invalid scope |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_subscription**
+> Subscription update_subscription(subscription_guid, patch_subscription)
+
+Patch subscription
+
+Update a subscription.  Required scope: **subscriptions:write**
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+* OAuth Authentication (oauth2):
+
+```python
+import time
+import cybrid_api_organization
+from cybrid_api_organization.api import subscriptions_organization_api
+from cybrid_api_organization.model.patch_subscription import PatchSubscription
+from cybrid_api_organization.model.subscription import Subscription
+from cybrid_api_organization.model.error_response import ErrorResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://organization.sandbox.cybrid.app
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cybrid_api_organization.Configuration(
+    host = "https://organization.sandbox.cybrid.app"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = cybrid_api_organization.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = cybrid_api_organization.Configuration(
+    host = "https://organization.sandbox.cybrid.app"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with cybrid_api_organization.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = subscriptions_organization_api.SubscriptionsOrganizationApi(api_client)
+    subscription_guid = "subscription_guid_example" # str | Identifier for the subscription.
+    patch_subscription = PatchSubscription(
+        name="name_example",
+    ) # PatchSubscription | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Patch subscription
+        api_response = api_instance.update_subscription(subscription_guid, patch_subscription)
+        pprint(api_response)
+    except cybrid_api_organization.ApiException as e:
+        print("Exception when calling SubscriptionsOrganizationApi->update_subscription: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_guid** | **str**| Identifier for the subscription. |
+ **patch_subscription** | [**PatchSubscription**](PatchSubscription.md)|  |
+
+### Return type
+
+[**Subscription**](Subscription.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | subscription updated |  -  |
+**400** | Invalid requests - invalid subscription name length |  -  |
+**401** | Unauthorized - Authentication failed |  -  |
+**403** | Invalid scope |  -  |
+**404** | Subscription not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
