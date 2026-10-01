@@ -330,12 +330,13 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
     guid = "guid_example" # str | Comma separated subscription_guids to list subscriptions for. (optional)
     environment = "environment_example" # str | Environment to list subscriptions for. (optional)
     state = "state_example" # str | State to list subscriptions for. (optional)
+    type = "type_example" # str | Comma separated types to list subscriptions for. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get subscriptions list
-        api_response = api_instance.list_subscriptions(page=page, per_page=per_page, guid=guid, environment=environment, state=state)
+        api_response = api_instance.list_subscriptions(page=page, per_page=per_page, guid=guid, environment=environment, state=state, type=type)
         pprint(api_response)
     except cybrid_api_organization.ApiException as e:
         print("Exception when calling SubscriptionsOrganizationApi->list_subscriptions: %s\n" % e)
@@ -351,6 +352,7 @@ Name | Type | Description  | Notes
  **guid** | **str**| Comma separated subscription_guids to list subscriptions for. | [optional]
  **environment** | **str**| Environment to list subscriptions for. | [optional]
  **state** | **str**| State to list subscriptions for. | [optional]
+ **type** | **str**| Comma separated types to list subscriptions for. | [optional]
 
 ### Return type
 
