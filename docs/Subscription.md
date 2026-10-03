@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **signing_key** | **str** | Subscription private signing key. Optional when subscription_type is webhook. | [optional] 
 **recipient** | **str, none_type** | Recipient email address. Required when subscription_type is email. | [optional] 
 **deliveries_failing_since** | **datetime, none_type** | ISO8601 datetime the deliveries started failing. | [optional] 
+**scheduled_deletion_at** | **datetime, none_type** | ISO8601 datetime the subscription is scheduled to be deleted at; events continue to be delivered until then. | [optional] 
 **failure_code** | **str, none_type** | The failure code of a subscription (if any) | [optional] 
 **created_at** | **datetime** | ISO8601 datetime the record was created at. | [optional] 
 **updated_at** | **datetime** | ISO8601 datetime the record was last updated at. | [optional] 
