@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **event_types** | **[str], none_type** | Event types delivered to the subscription, within those its channel supports; null means no narrowing. | [optional] 
 **deliveries_failing_since** | **datetime, none_type** | ISO8601 datetime the deliveries started failing. | [optional] 
 **scheduled_deletion_at** | **datetime, none_type** | ISO8601 datetime the subscription is scheduled to be deleted at; events continue to be delivered until then. | [optional] 
-**deletion_protected** | **bool** | Whether the subscription is protected from deletion. | [optional] 
+**protection_enabled** | **bool** | Whether the subscription is protected from deletion. | [optional] 
 **failure_code** | **str, none_type** | The failure code of a subscription (if any) | [optional] 
 **created_at** | **datetime** | ISO8601 datetime the record was created at. | [optional] 
 **updated_at** | **datetime** | ISO8601 datetime the record was last updated at. | [optional] 
