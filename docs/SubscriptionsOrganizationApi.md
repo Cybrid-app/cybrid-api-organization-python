@@ -61,6 +61,9 @@ with cybrid_api_organization.ApiClient(configuration) as api_client:
         environment="sandbox",
         type="webhook",
         name="name_example",
+        event_types=[
+            "trade.storing",
+        ],
         url="url_example",
         recipient="recipient_example",
     ) # PostSubscription | 
@@ -111,7 +114,7 @@ Name | Type | Description  | Notes
 
 Delete Subscription
 
-Schedules a subscription for deletion.  The subscription is not removed immediately: it keeps delivering events until `scheduled_deletion_at`, which is returned on the subscription and is 24 hours after the request by default. A `subscription.deleting` event is published when the deletion is requested and a `subscription.deleted` event when it takes effect. Repeating the request does not move the deadline, and the subscription cannot be modified once a deletion is pending.  Required scope: **subscriptions:execute**
+Schedules a subscription for deletion.  The subscription is not removed immediately: it keeps delivering events until `scheduled_deletion_at`, which is returned on the subscription and is 24 hours after the request by default. A `subscription.deleting` event is published when the deletion is requested and a `subscription.deleted` event when it takes effect. Repeating the request does not move the deadline, and the subscription cannot be modified once a deletion is pending. A subscription with `deletion_protected` set cannot be deleted.  Required scope: **subscriptions:execute**
 
 ### Example
 
@@ -189,6 +192,7 @@ void (empty response body)
 **401** | Unauthorized - Authentication failed |  -  |
 **403** | Invalid scope |  -  |
 **404** | Subscription not found |  -  |
+**422** | Unprocessable Content |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
